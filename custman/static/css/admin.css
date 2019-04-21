@@ -1,0 +1,20 @@
+#header {
+    background: #5DD1B2;
+    color: white;
+}
+#branding h1 {
+    color: white;
+}
+
+div.breadcrumbs {
+    background: teal;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background: #5DD1B2;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #369CEE;
+    color: white;
+}

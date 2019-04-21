@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="columns">
+  <div class="column">
+    {% if user.is_authenticated %}
+    {% for emp in emps %}
+    <h3 class="title">{{ emp.name }} Custodies</h3>
+    {% endfor %}
+    {% if custodies %}
+    <table class="table is-striped is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Serial Number</th>
+          <th>Handle Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for custody in custodies %}
+        <tr>
+          <td>{{ custody.description }}</td>
+          <td>{{ custody.serial_number }}</td>
+          <td>{{ custody.created_at }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>This employee has no custodies yet</p>
+    {% endif %}
+    {% else %}
+    <p>Please login first</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}

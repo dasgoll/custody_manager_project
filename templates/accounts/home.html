@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="columns">
+  <div class="column">
+
+  </div>
+  <div class="column">
+    <h3 class="title">Login</h3>
+    <div class="box">
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div class="field">
+          <div class="control">
+            <input class="input" type="text" name="username" placeholder="Username" required>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input" type="password" name="password" placeholder="Password" required>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button class="button is-info" type="submit">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <div class="column">
+
+  </div>
+</div>
+
+{% endblock content %}

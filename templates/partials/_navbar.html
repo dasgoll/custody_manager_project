@@ -1,0 +1,29 @@
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a href="{% url 'employees' %}" class="navbar-item">
+            <h1 class="subtitle is-4">Custdoy Manager</h1>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-end">
+            <div class="navbar-item">
+                {% if user.is_authenticated %}
+                Welcome {{ user.username }}
+                <a href="javascript:{document.getElementById('logout').submit()}" class="button is-danger"
+                    style="margin-left:5px;">
+                    Logout
+                </a>
+                <form action="{% url 'logout' %}" method="POST" id="logout">
+                    {% csrf_token %}
+                    <input type="hidden">
+                </form>
+                {% else %}
+                <a href="{% url 'login' %}" class="button is-info">Login</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</nav>
+<br>
+<br>

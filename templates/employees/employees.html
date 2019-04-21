@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+<div class="columns">
+  <div class="column">
+
+  </div>
+  <div class="column">
+    {% if user.is_authenticated %}
+    {% if employees %}
+    {% for employee in employees %}
+    <div class="box">
+      <p><strong>{{ employee.name }}</strong></p>
+      <p>{{ employee.title }}</p>
+      <p><em>Hired {{ employee.hire_date | naturaltime}}</em></p>
+      <a href="{% url 'custodies' employee.id %}" class="button is-info is-small is-outlined">View Custodies</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No Employees Avialbale</p>
+    {% endif %}
+    {% else %}
+    <p>Please login first</p>
+    {% endif %}
+  </div>
+  <div class="column">
+
+  </div>
+</div>
+
+{% endblock content %}
