@@ -1,6 +1,6 @@
 # Custody Manager
 
-This is a small project build to learn Django framework.
+This is a small project I build it to learn Django framework.
 
 This app is to manage custodies for employees inside a company.
 
